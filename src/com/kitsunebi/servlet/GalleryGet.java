@@ -17,8 +17,8 @@ import javax.servlet.ServletContext;
  * Servlet implementation class Gallery
  */
 
-@WebServlet("/gallery")
-public class Gallery extends HttpServlet {
+@WebServlet("/gallery/get")
+public class GalleryGet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static Integer imgCount = 0;
 	private static ArrayList<String> imgs = new ArrayList<String>();
@@ -26,7 +26,7 @@ public class Gallery extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Gallery() {
+    public GalleryGet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -50,7 +50,7 @@ public class Gallery extends HttpServlet {
         	imgCount = 0;
         }
         
-        if (imgCount < 0)
+        if (imgCount <= 0)
         	imgCount = 0;
         else if (imgCount >= imgs.size())
         	imgCount = imgs.size() -1;
